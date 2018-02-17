@@ -41,6 +41,7 @@ void Utils::rotateContour(const QVector<QPointF> &contour, const QPointF &refPoi
 // en.wikipedia.org/wiki/Centroid#Centroid_of_a_polygon
 //
 QPointF Utils::computeContourCentroid(const QVector<QPointF> &contour) {
+	Q_ASSERT(contour.count() >= 2);
 	QPointF centroid;
 	qreal signedArea = 0.0f;
 	const auto computeStep = [&centroid, &signedArea](const QPointF &p0, const QPointF &p1) {
